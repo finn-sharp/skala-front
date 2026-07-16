@@ -4,48 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome SKALA</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-        <h1>김재현입니다</h1>
-        <p>저의프로필, 학습 내용, 여행 기록들을 모아둔 Hub 페이지입니다.</p>
+        <h1>Finn#</h1>
+        <h2 class="main_sub_text">메뉴</h2>
+        <nav>
+            <ul>
+                <li><a href="myProfile.html">소개(Profile)</a></li>
+                <li><a href="myClass.html">수업 시간표(Class)</a></li>
+                <li><a href="myHoliday.html">휴일 계획(Holiday)</a></li>
+                <li><a href="myTrip.html">여행 앨범(Album)</a></li>
+                <li><a href="signUp.html">회원가입 (SignUp)</a></li>
+            </ul>
+        </nav>
     </header>
-    <nav>
-        <h3>바로가기 메뉴</h3>
-        <ul>
-            <li><a href="myProfile.html">소개(Profile)</a></li>
-            <li><a href="myClass.html">수업 시간표(Class)</a></li>
-            <li><a href="myHoliday.html">휴일 계획(Holiday)</a></li>
-            <li><a href="myTrip.html">여행 앨범(Album)</a></li>
-            <li><a href="signUp.html">회원가입(Sign Up)</a></li>
-        </ul>
-    </nav>
     <hr>
     <main>
         <section>
-            <h2>오늘의 주요 소식</h2>
-            <article>
-                <h3>최근 공지 및 업데이트</h3>
-                    <h4>[공지] SKALA Hub 페이지 오픈 !</h4>
-                    <p>김재현의 개인 Hub 페이지가 오픈되었습니다. 많은 관심 부탁드립니다.
+            <h1 class="main_title">오늘의 주요 소식</h1>
+            <p>저의프로필, 학습 내용, 여행 기록들을 모아둔 Hub 페이지입니다.</p>
+        </section>
+        <section>
+            <figure class="card_info_box">
+                <img src="/media/img/graduate.png" alt="CNU Graduation">
+                <h3><a href="myTrip.html">이달의 여행</a></h3> 
+                <p><b>베스트 컷 : </b> 전남대학교 졸업식에서 찍은 기념 사진입니다.</p><br>
+            </figure>
+            <div class="card_image_box">
+                <a href="myTrip.html"><img src="/media/img/graduate.png" alt="CNU Graduation"></a>
+            </div>
+        </section>
+        <hr>
+        <section>
+            <figure class="card_info_box">
+                <img src="/media/img/graduate.png" alt="CNU Graduation">
+                <h3><a href="myTrip.html">이달의 여행</a></h3> 
+                <p><b>베스트 컷 : </b> 전남대학교 졸업식에서 찍은 기념 사진입니다.</p><br>
+            </figure>
+            <div class="card_image_box">
+                <a href="myTrip.html"><img src="/media/img/graduate.png" alt="CNU Graduation"></a>
+            </div>
+        </section>
+        <hr>
+        <section>    
+            <h1 class="main_title">최근 공지 및 업데이트</h1>
+            <article class="main_notice_card">                
+                    <h4 class="main_notice_title">[공지] SKALA Hub 오픈 !</h4>
+                    <p class="main_notice_text">김재현의 개인 Hub 페이지가 오픈되었습니다. 많은 관심 부탁드립니다.
+                    <br>작성일 : 2026년 7월 16일(목)</p>
+            </article>
+            <article class="main_notice_card">
+                    <h4 class="main_notice_title">[공지] SKALA Hub 오픈 !</h4>
+                    <p class="main_notice_text">김재현의 개인 Hub 페이지가 오픈되었습니다. 많은 관심 부탁드립니다.
+                    <br>작성일 : 2026년 7월 16일(목)</p>
+            </article>
+            <article class="main_notice_card">
+                    <h4 class="main_notice_title">[공지] SKALA Hub 오픈 !</h4>
+                    <p class="main_notice_text">김재현의 개인 Hub 페이지가 오픈되었습니다. 많은 관심 부탁드립니다.
                     <br>작성일 : 2026년 7월 16일(목)</p>
             </article>
         </section>
-        <section>
-            <h3>이달의 베스트 컷</h3> 
-            <figure>
-                <img src="/media/img/graduate.png" alt="CNU Graduation" width="450">
-                <p><b>베스트 컷 : </b> 전남대학교 졸업식에서 찍은 기념 사진입니다.</p><br>
-            </figure>
-        </section>
-    </main>
-    <aside>
-        <p>Undefined</p>
-    </aside> 
-    <hr>       
+    </main>      
     <footer>
-        <p>이메일 문의: penguin-klg@naver.com</p>
-        <p>2026 Finn-sharp Portfolio. 모든 태그는 웹 표준 시맨틱 태그로 작성되었습니다.</p>
+        <div>
+            <aside>
+                <p>Undefined</p>
+            </aside> 
+            <p>이메일 문의: penguin-klg@naver.com</p>
+            <p>2026 Finn-sharp Portfolio. 모든 태그는 웹 표준 시맨틱 태그로 작성되었습니다.</p>
+        </div>
     </footer>
 </body>
 </html>
