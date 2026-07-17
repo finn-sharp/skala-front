@@ -1,62 +1,108 @@
-/* 전체 페이지 스타일 */
-body {
-    font-family: "Noto Sans KR", sans-serif;
-    background-color: #f4f8fb;
-    color: #333;
-    line-height: 1.8;
-    margin: 0;
-    padding: 20px;
+/* ==========================================================================
+   1. GOOGLE FONTS (구글 폰트 불러오기)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+/* ==========================================================================
+   2. GLOBAL & HEADER STYLE (기본 공통 및 상단 바)
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+figure {
+  margin:0; /* figure 자체적으로 적용되는 margin이 있음 */
+  margin-bottom: 2rem;
 }
 
-/* 제목 스타일 */
+body {
+  /* layout */
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-width: 500px;
+  min-height: 100vh;
+  
+  /* skin */
+  background-color: #ffffff;
+  color: #212529;
+}
+main {
+  flex:1;
+}
+
+/* 전체 h1,h2 tag 대상 제목 스타일 변경 */
 h1 {
-    color: #ffffff;
-    background-color: #4a90e2;
+    color: #212529;
     font-size: 36px;
-    padding: 15px;
-    border-left: 8px solid #1f5fa8;
-    border-radius: 8px;
 }
 
 h2 {
-    color: #4a90e2;
+    color: black;
     font-size: 28px;
-    padding: 10px;
-    border-bottom: 3px solid #4a90e2;
+    padding-bottom: 15px;
+    border-bottom: 3px solid #212529;
 }
-
-/* 링크 스타일 */
-a {
-    color: #ff6600;
-    text-decoration: none;
+/* 회원가입 페이지 */
+button,
+input[type="submit"],
+input[type="reset"] {
+    background-color: #212529;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 16px;
     font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-
-/* subject 2.2 - 박스 모델의 이해*/
-a:hover {
-    color: #cc3300;
-    text-decoration: underline;
+#userEmail,
+select[name="emailDomain"] {
+    width: auto;
 }
 
-
-body {
-    margin: 0;
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
+button:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #212529;
 }
 
-/* subject 2.2 - myTrip - trip-card */
-.trip-card {
-    background-color: white;
-    border: 2px solid #4CAF50;
-    padding: 20px;
-    margin: 15px 0;
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #706f6f;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+fieldset {
+    border: 2px solid #212529;
     border-radius: 10px;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color:white;
 }
 
-/* subject 2.2 - myClass */
+legend {
+    font-weight: bold;
+    color: #212529;
+    padding: 0 10px;
+}
+
+/* 시간표 페이지  */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -65,7 +111,7 @@ table {
 }
 
 th {
-    background-color: #4CAF50;
+    background-color: #212529;
     color: white;
     padding: 12px;
     border: 1px solid #ddd;
@@ -85,67 +131,438 @@ tr:hover {
     background-color: #e8f5e9;
 }
 
+
+
+/* Semantic HTML - <header> */
+header {
+  /* layout */
+  width:100%;
+  margin: 0 auto;
+  padding-inline: max(1rem, calc((100vw - 1024px) / 2));
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  
+  /* skin */
+  background-color: #ffffff;  
+}
+
+.logo a {
+  /* layout */
+  z-index: 100;
+
+  /* interaction */
+  text-decoration:none;
+  outline:none;
+  color:inherit;
+}
+.logo:hover{
+  transform: scale(1.1);
+}
+
+nav {
+  /* layout */
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+}
+
+.main_sub_text {
+  /* layout  */
+  display: block;
+  padding-right:3.3px;
+}
+.main_sub_text:hover{
+  /* interaction */
+  transform: scale(1.1);
+}
+
+.main_nav {
+  /* layout */
+  display: flex;  
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-right:1rem;
+  
+  /* skin */
+  list-style: none;
+}
+
+.main_nav>li {
+  /* layout */
+  display: block;
+  
+  /* skin */
+  line-height: 1.25rem;
+  font-size: 0.5rem;
+  font-weight: 700;
+  
+  /* interaction */
+  transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+li a {
+  /* skin */
+  color: inherit;
+
+  /* interaction */
+  text-decoration: none;
+}
+
+hr {
+  /* layout */
+  width: 100%; 
+  height: 1px;          
+  max-width: 1024px;
+  margin-bottom: 3rem;  
+
+  /* skin */
+  background: #e5e8eb;  
+  border: 0;    
+}
+
 .container {
-    width: 80%;
-    max-width: 1000px;
-    margin: 0 auto;   /* 가운데 정렬 */
-    padding: 20px;
-}
-
-/* subject 2.3 - signUp.html */
-input[type="text"],
-input[type="password"],
-input[type="date"],
-select,
-textarea {
+    /* layout */
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-sizing: border-box;
+    margin: 0 auto;
+    padding-inline:1rem;
 }
 
-input[type="radio"],
-input[type="checkbox"] {
-    width: auto;
-    margin-right: 5px;
+section {
+  /* layout */
+  margin-bottom: 4rem;
 }
 
-fieldset {
-    border: 2px solid #ff6f0f;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #fffaf5;
+/* Semantic HTML - <footer> */
+footer {
+  margin-top:auto;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 0 ; 
+  
+  background-color: #f9fafb; /* 당근마켓 느낌의 은은하고 깔끔한 배경색 */
+  border-top: 1px solid #e5e8eb; /* 상단 구분선 */
 }
 
-legend {
-    font-weight: bold;
-    color: #ff6f0f;
-    padding: 0 10px;
+footer div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer div div {
+  order:0;
+  display:inline-block;
+  margin: 0;
+}
+footer div div p {  
+  /* skin */
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #6b7684; /* 본문보다 살짝 흐린 회색으로 서브 느낌 부여 */
+}
+footer div div p:nth-child(2) {
+  color: #4e5968;    
+  font-weight: 500;
 }
 
-button,
-input[type="submit"],
-input[type="reset"] {
-    background-color: #ff6f0f;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
+footer div aside {
+  /* Temp - Layout */
+  width:200px;
+  height:40px;
+  
+  /* layout */
+  order:1;
+  display: block;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  margin-bottom: 0.25rem;
+  
+  /* skin */
+  border-radius: 4px;
+  background-color: #e5e8eb;
 }
 
-#userEmail,
-select[name="emailDomain"] {
-    width: auto;
+footer div aside p {
+  /* layout */
+  margin: 0;
+  
+  /* skin */
+  font-size: 0.7s5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #4e5968;
 }
 
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-    background-color: #e65c00;
+
+/* ==========================================================================
+   3. index.html CSS (공통 + Mobile)
+   ========================================================================== */
+/* Main - Title */
+   .main_title > h1 {
+  /* layout */
+  margin-bottom: 1rem;
+  
+  /* skin */
+  color: #212529;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: left;
+}
+.main_title > p {
+  /* layout */
+  margin-bottom: 2rem;
+  
+  /* skin */
+  color: #212529;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.3;
+  text-align: left;
+}
+
+/* Main - Card */
+/* Mobile용에선 Desktop용 이미지 제거 */
+.card_info_image {
+  /* layout */
+  display: none;
+}
+.card_info {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.card_info_box{
+  /* layout */
+  flex:1;
+  margin: 0 auto;
+  gap: 4rem;
+}
+.card_info_box figure img  {
+  /* layout */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  
+  /* skin */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+.card_info_box{
+  /* layout */
+  margin: 0px;
+}
+.card_info_box h3 a {
+  /* skin */
+  font-size: 1.5rem;
+  color: #212529;
+  text-decoration: none;
+}
+.card_info_box p {
+  /* layout */
+  margin: 0;
+  
+  /* skin */
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #4e5968;
+}
+
+/* Main - Notice */
+.card_notice {
+  /* layout */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.card_notice_item {
+  /* layout */
+  flex: 1 1 300px; 
+  max-width: 800px;
+}
+
+
+/* ==========================================================================
+   4. Desktop(786 이상) - index.html
+   ========================================================================== */
+@media (min-width: 768px) {
+  nav {
+    /* layout */
+    position: static;
+    display: block;
+    padding: 0;
+    
+    /* skin */
+    background-color: transparent;
+  }
+  .main_sub_text {
+    /* layout */
+    display: none;
+  }
+  .main_nav {
+    /* layout */
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding-right: 1rem;
+    
+    /* skin */
+    list-style:none;
+  }
+  .main_nav > li {
+    /* layout */
+    display: inline; /* inline - 한줄 배치임*/
+    
+    /* skin */
+    font-size: 0.8rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    
+    /* interaction */
+    transition: all 150ms cubic-bezier(1, 0.2, 0, 0.4);
+  }
+  .container {
+     /* layout */
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding-inline: 1rem;
+  }
+  section {
+    /* layout */
+    margin: 2rem 0rem;
+  }
+
+  /* Main - Card */
+  .card_info {
+    /* layout */
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card_info_box {
+    /* layout */
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-bottom: 3rem;
+  }
+  .card_info_box figure {
+    /* layout */
+    flex: 1;
+    order: 0;               /* 모바일 순서 초기화 */
+    align-items: flex-start; /* 좌측 정렬 */
+    
+    /* skin */
+    text-align: left;
+  }
+  .card_info_box figure img {
+    /* layout */
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    
+    /* skin */
+    border-radius: 50%;
+  }
+  .card_info_image{
+    /* layout */
+    display: block;
+    flex: 1;
+    order: 1;              
+  }
+  .card_info_image img {
+    /* layout */
+    width: 100%;
+    object-fit: cover;
+    
+    /* skin */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .trip-gallery {
+    display: grid;
+    gap: 1.5rem;
+    align-items: stretch;
+    grid-template-columns: 3fr;
+  }
+}
+
+
+/* ==========================================================================
+   [수정 및 보완] TRIP ALBUM GRID (그리드 깨짐 완벽 방지)
+   ========================================================================== */
+
+
+/* 개별 여행 카드 스타일 - 더 고급스럽게 */
+.trip-card {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  
+  /* skin */
+  background: #ffffff;
+  border: 1px solid #f2f4f6; 
+  border-radius: 20px; 
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.21, 1.02, 0.43, 1.01), 
+              box-shadow 0.3s cubic-bezier(0.21, 1.02, 0.43, 1.01);
+  cursor: pointer;
+}
+
+.trip-card:hover {
+  /* skin */
+  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.08);
+  
+  /* interaction */
+  transform: translateY(-6px);
+}
+
+/* 카드 이미지 비율 고정 및 꽉 차게 처리 */
+.trip-card img {
+  /* layout */
+  width: 100%;
+  height: 220px;
+  margin-bottom: 1.25rem;
+  
+  /* skin */
+  object-fit: cover;
+  border-radius: 14px;
+  background-color: #f9fafb;
+}
+
+.trip-card h3 {
+  /* layout */
+  margin: 0 0 0.6rem 0;
+  
+  /* skin */
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #191f28; /* 조금 더 선명한 블랙 */
+  line-height: 1.4;
+}
+
+.trip-card p {
+  /*  */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4e5968;
+  margin: 0;
+  /* 서브 텍스트가 너무 길어질 때 깔끔하게 3줄까지만 보여주고 말줄임(...) 처리 */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }

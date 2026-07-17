@@ -7,22 +7,50 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>나의 여행 앨범</h1>
+    <header>
+        <h1 class="logo"><a href="index.html">Finn#</a></h1>
+        <h1 class="main_sub_text">메뉴</h1>
+        <nav>
+            <ul class="main_nav">
+                <li><a href="myProfile.html">소개(Profile)</a></li>
+                <li><a href="myClass.html">수업 시간표(Class)</a></li>
+                <li><a href="myHoliday.html">휴일 계획(Holiday)</a></li>
+                <li><a href="myTrip.html">여행 앨범(Album)</a></li>
+                <li><a href="signUp.html">회원가입 (SignUp)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">        
+        <hr>
+        <div class="trip-gallery">
+            <h1>나의 여행 앨범</h1>
             <audio controls autoplay loop muted>
                 <source src="/media/audio/joohomin_jazz_input.mp3" type="audio/mpeg">
                 Your browser does not support the audio element.
             </audio>
-        <hr>
+            <hr>
             <p class="trip-card"><img src="/media/img/googlefordeveloper.png" alt="Google for Developers" width="450"><br><b>Google for Developers : </b> 산하 학생 개발자 커뮤니티 설립(CNU, 2024)</p><br>
             <p class="trip-card"><img src="/media/img/scholar.png" alt="LOTTE SCHOLARSHIP" width="450"><br><b>롯데장학재단 : </b> 이공계 취업준비생 장학생 선발(2025.09)</p><br>
             <p class="trip-card"><img src="/media/img/graduate.png" alt="CNU GRADUATE" width="450"><br><b>전남대학교 : </b> 졸업식 참석 및 총장 봉사상 수상(2026.02)</p><br>
-        <hr>
+            <hr>
             <h2>펭귄의 여행영상</h2>
-            <video controls width="450" autoplay muted>
+            <video controls width="450" muted>
                 <source src="/media/video/penguin-trip.mp4" type="video/mp4">
                 Your browser does not support the video element.
             </video>
-    </div>
+            <br>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <aside> 
+                <p>Undefined</p>
+            </aside> 
+            <div>
+                <p>이메일 문의: penguin-klg@naver.com</p>
+                <p>2026 Finn-sharp Portfolio. 모든 태그는 웹 표준 시맨틱 태그로 작성되었습니다.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
