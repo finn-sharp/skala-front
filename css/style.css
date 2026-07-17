@@ -137,6 +137,7 @@ tr:hover {
 header {
   /* layout */
   width:100%;
+  height: auto;
   margin: 0 auto;
   padding-inline: max(1rem, calc((100vw - 1024px) / 2));
   position: sticky;
@@ -165,17 +166,28 @@ header {
 
 nav {
   /* layout */
-  display: none;
+  display: block;
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
+
+  background-color: white;
+}
+
+#menu-trigger {
+    display: none;
 }
 
 .main_sub_text {
   /* layout  */
+  cursor: pointer;
   display: block;
   padding-right:3.3px;
+
+  /* skin */
+  font-size:24px;
+  font-weight: bold;
 }
 .main_sub_text:hover{
   /* interaction */
@@ -184,8 +196,8 @@ nav {
 
 .main_nav {
   /* layout */
-  display: flex;  
-  flex-direction: column;
+  display: none;  
+  flex-direction: column ;
   gap: 0.5rem;
   padding-right:1rem;
   
@@ -198,12 +210,18 @@ nav {
   display: block;
   
   /* skin */
-  line-height: 1.25rem;
-  font-size: 0.5rem;
+  text-align: right;
+  line-height: 2rem;
+  font-size: 1rem;
   font-weight: 700;
   
   /* interaction */
   transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#menu-trigger:checked ~ nav .main_nav{
+    display: flex;
+    transition: all 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 li a {
@@ -489,6 +507,7 @@ footer div aside p {
   }
   .main_nav {
     /* layout */
+    display: flex ;
     flex-direction: row;
     align-items: center;
     gap: 16px;
@@ -577,5 +596,4 @@ footer div aside p {
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
-
 
