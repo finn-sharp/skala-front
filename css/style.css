@@ -93,7 +93,6 @@ input[type="checkbox"] {
     width: auto;
     margin-right: 5px;
 }
-
 fieldset {
     border: 2px solid #212529;
     border-radius: 10px;
@@ -186,7 +185,6 @@ header {
   animation-timing-function: ease-out; /* 처음엔 빠르고 끝엔 부드럽게 */
   animation-fill-mode: forwards;
 }
-
 .logo:hover{
   transform: scale(1.1);
 }
@@ -304,62 +302,129 @@ section {
 }
 
 /* Semantic HTML - <footer> */
+/* --- 기존 스타일 유지 및 클래스 기반 변경 --- */
 footer {
-  margin-top:auto;
+  /* layout */
+  margin-top: auto;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 0 ; 
-  
-  background-color: #f9fafb; /* 당근마켓 느낌의 은은하고 깔끔한 배경색 */
-  border-top: 1px solid #e5e8eb; /* 상단 구분선 */
+  padding: 2rem 0;
+
+  /* skin */
+  background-color: #f9fafb;
+  border-top: 1px solid #e5e8eb;
 }
 
-footer div{
+footer div {
+  /* layout */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
 }
+
 footer div div {
-  order:0;
-  display:inline-block;
+  /* layout */
+  order: 0;
+  display: inline-block;
   margin: 0;
 }
-footer div div p {  
-  /* skin */
+
+footer div div p {
+  /* layout */
   line-height: 1.5;
+
+  /* skin */
   font-size: 0.875rem;
-  color: #6b7684; /* 본문보다 살짝 흐린 회색으로 서브 느낌 부여 */
+  color: #6b7684;
 }
+
 footer div div p:nth-child(2) {
-  color: #4e5968;    
+  /* skin */
+  color: #4e5968;
   font-weight: 500;
 }
 
-footer div aside {
-  /* Temp - Layout */
-  width:200px;
-  height:40px;
-  
+footer div aside.footer-btn-container {
   /* layout */
-  order:1;
-  display: block;
+  order: 1;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 0.25rem 0.5rem;
-  margin-bottom: 0.25rem;
-  
+  gap: 8px;
+  width: 160px;
+  padding: 16px 12px;
+  margin-bottom: 20px;
+  position: relative;
+
   /* skin */
-  border-radius: 4px;
-  background-color: #e5e8eb;
+  border: 3px solid #9697997f;
+  border-radius: 12px;
+  background-color: #ffffff;
 }
 
-footer div aside p {
+.footer-weather-layer {
   /* layout */
-  margin: 0;
-  
+  position: absolute;
+  bottom: 0;
+  right: calc(100% + 16px);
+  width: 220px;
+  padding: 16px;
+  text-align: left;
+  z-index: 100;
+
   /* skin */
-  font-size: 0.7s5rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e8eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.footer-js-btn {
+  /* layout */
+  display: block;
+  width: 140px;
+  padding: 0.5rem 0.75rem;
+
+  /* skin */
+  border: none;
+  border-radius: 4px;
+  background-color: #e5e8eb;
+  color: #4e5968;
+  font-size: 0.8rem;
   font-weight: 700;
-  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.footer-js-btn:hover {
+  /* skin */
+  background-color: #d1d6db;
+  color: #333d4b;
+}
+
+.footer-weather-layer select {
+  /* layout */
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+
+  /* skin */
+  border: 1px solid #e5e8eb;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #4e5968;
+  background-color: #ffffff;
+}
+
+#weather-box {
+  /* layout */
+  line-height: 1.5;
+
+  /* skin */
+  font-size: 0.85rem;
   color: #4e5968;
 }
 

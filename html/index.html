@@ -69,14 +69,43 @@
     </main>      
     <footer>
         <div class="container">
-            <aside> 
-                <p>Undefined</p>
-            </aside> 
             <div>
                 <p>이메일 문의: penguin-klg@naver.com</p>
                 <p>2026 Finn-sharp Portfolio. 모든 태그는 웹 표준 시맨틱 태그로 작성되었습니다.</p>
             </div>
+            <aside class="footer-btn-container">
+                <button type="button" class="footer-js-btn" onclick="startUpDownGame()">업다운 게임</button>
+                <button type="button" class="footer-js-btn" onclick="calculateGrade()">성적 계산기</button>
+                <button type="button" class="footer-js-btn" onclick="showMyBag()">내 가방 보기</button>
+                <button type="button" class="footer-js-btn weather-toggle" onclick="toggleWeatherBox()">실시간 날씨 ▾</button>
+                <div id="footer-weather-layer" class="footer-weather-layer" style="display: none;">
+                    <p id="current-location-text" style="margin: 0 0 10px 0; font-size: 0.8rem; font-weight: 700; color: #4e5968;">
+                        📍 현재 위치: 위치 확인 중...
+                    </p>
+                    <select id="city-select">
+                        <option value="">-- 도시 선택 --</option>
+                        <option value="seoul" data-lat="37.5665" data-lon="126.9780">대한민국 서울 KR</option>
+                        <option value="tokyo" data-lat="35.6762" data-lon="139.6503">일본 도쿄 JP</option>
+                        <option value="paris" data-lat="48.8566" data-lon="2.3522">프랑스 파리 FR</option>
+                    </select>
+                    <div id="weather-box"></div>
+                </div>
+            </aside>
         </div>
     </footer>
+
+    <!-- 자바스크립트 파일 연동 (기존 경로 유지) -->
+    <script src="../script/upDown.js"></script>
+    <script src="../script/grade.js"></script>
+    <script src="../script/bag.js"></script>
+    <script type="module" src="../script/realtimeInfo.js"></script>
+
+    <script>
+    // 날씨 토글 함수
+    function toggleWeatherBox() {
+        const layer = document.getElementById('footer-weather-layer');
+        layer.style.display = layer.style.display === 'none' ? 'block' : 'none';
+    }
+    </script>
 </body>
 </html>
