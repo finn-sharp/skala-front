@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
-  min-width: 500px;
+  min-width: 600px;
   min-height: 100vh;
   
   /* skin */
@@ -388,6 +388,87 @@ footer div aside p {
   max-width: 800px;
 }
 
+/* ==========================================================================
+   4. myTrip.html CSS (공통 + Mobile)
+   ========================================================================== */
+/* 앨범 제목 및 노래 배치 */
+.trip-title {
+  /* layout */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tirip-title audio {
+  max-width: 2rem;
+}
+
+/* 카드 CSS */
+.trip-gallery {
+  /* layout */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.trip-card {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  
+  /* skin */
+  background: #ffffff;
+  border: 1px solid #f2f4f6; 
+  border-radius: 20px; 
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.21, 1.02, 0.43, 1.01), 
+              box-shadow 0.3s cubic-bezier(0.21, 1.02, 0.43, 1.01);
+  cursor: pointer;
+}
+
+.trip-card:hover {
+  /* skin */
+  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.08);
+  
+  /* interaction */
+  transform: translateY(-6px);
+}
+
+.trip-card img, .trip-video {
+  /* layout */
+  width: 100%;
+  height: 220px;
+  margin-bottom: 1.25rem;
+  
+  /* skin */
+  object-fit: cover;
+  border-radius: 14px;
+  background-color: #f9fafb;
+}
+
+.trip-card h3 {
+  /* layout */
+  margin: 0 0 0.6rem 0;
+  
+  /* skin */
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #191f28; 
+  line-height: 1.4;
+}
+
+.trip-card p {
+  /*  */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4e5968;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 
 /* ==========================================================================
    4. Desktop(786 이상) - index.html
@@ -490,79 +571,11 @@ footer div aside p {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   }
-
+  
+  /* myTrip.html - 1열 정렬  */
   .trip-gallery {
-    display: grid;
-    gap: 1.5rem;
-    align-items: stretch;
-    grid-template-columns: 3fr;
-  }
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
 }
 
 
-/* ==========================================================================
-   [수정 및 보완] TRIP ALBUM GRID (그리드 깨짐 완벽 방지)
-   ========================================================================== */
-
-
-/* 개별 여행 카드 스타일 - 더 고급스럽게 */
-.trip-card {
-  /* layout */
-  display: flex;
-  flex-direction: column;
-  padding: 1.5rem;
-  
-  /* skin */
-  background: #ffffff;
-  border: 1px solid #f2f4f6; 
-  border-radius: 20px; 
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
-  transition: transform 0.3s cubic-bezier(0.21, 1.02, 0.43, 1.01), 
-              box-shadow 0.3s cubic-bezier(0.21, 1.02, 0.43, 1.01);
-  cursor: pointer;
-}
-
-.trip-card:hover {
-  /* skin */
-  box-shadow: 0 20px 32px rgba(0, 0, 0, 0.08);
-  
-  /* interaction */
-  transform: translateY(-6px);
-}
-
-/* 카드 이미지 비율 고정 및 꽉 차게 처리 */
-.trip-card img {
-  /* layout */
-  width: 100%;
-  height: 220px;
-  margin-bottom: 1.25rem;
-  
-  /* skin */
-  object-fit: cover;
-  border-radius: 14px;
-  background-color: #f9fafb;
-}
-
-.trip-card h3 {
-  /* layout */
-  margin: 0 0 0.6rem 0;
-  
-  /* skin */
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #191f28; /* 조금 더 선명한 블랙 */
-  line-height: 1.4;
-}
-
-.trip-card p {
-  /*  */
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #4e5968;
-  margin: 0;
-  /* 서브 텍스트가 너무 길어질 때 깔끔하게 3줄까지만 보여주고 말줄임(...) 처리 */
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
