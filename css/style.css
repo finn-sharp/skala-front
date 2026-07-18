@@ -156,19 +156,6 @@ header {
   background-color: #ffffff;  
 }
 
-@keyframes fadeInUp {
-    from {
-        /* 시작 상태 */
-        opacity: 0;           /* 완전히 투명하게 */
-        transform: translateY(20px); /* 원래 위치보다 20px 아래에 위치 */
-    }
-    to {
-        /* 끝 상태 (도착) */
-        opacity: 1;           /* 완전히 또렷하게 */
-        transform: translateY(0);    /* 원래 위치로 원복 */
-    }
-}
-
 .logo a {
   /* layout */
   display: inline-block;
@@ -178,12 +165,6 @@ header {
   text-decoration:none;
   outline:none;
   color:inherit;
-
-  /* animation */
-  animation-name: fadeInUp;       /* 정의한 애니메이션 이름 */
-  animation-duration: 1s;         /* 1초 동안 실행 */
-  animation-timing-function: ease-out; /* 처음엔 빠르고 끝엔 부드럽게 */
-  animation-fill-mode: forwards;
 }
 .logo:hover{
   transform: scale(1.1);
@@ -437,8 +418,28 @@ footer div aside.footer-btn-container {
 /* ==========================================================================
    3. index.html CSS (공통 + Mobile)
    ========================================================================== */
+@keyframes fadeInUp {
+    from {
+        /* 시작 상태 */
+        opacity: 0;           /* 완전히 투명하게 */
+        transform: translateY(20px); /* 원래 위치보다 20px 아래에 위치 */
+    }
+    to {
+        /* 끝 상태 (도착) */
+        opacity: 1;           /* 완전히 또렷하게 */
+        transform: translateY(0);    /* 원래 위치로 원복 */
+    }
+}
+
+.index-title {
+  /* animation */
+  animation-name: fadeInUp;       /* 정의한 애니메이션 이름 */
+  animation-duration: 1s;         /* 1초 동안 실행 */
+  animation-timing-function: ease-out; /* 처음엔 빠르고 끝엔 부드럽게 */
+  animation-fill-mode: forwards;
+}
 /* Main - Title */
-   .main_title > h1 {
+.main_title > h1 {
   /* layout */
   margin-bottom: 1rem;
   
@@ -479,6 +480,12 @@ footer div aside.footer-btn-container {
   flex:1;
   margin: 0 auto;
   gap: 4rem;
+
+  /* animation */
+  animation-name: fadeInUp;       /* 정의한 애니메이션 이름 */
+  animation-duration: 1s;         /* 1초 동안 실행 */
+  animation-timing-function: ease-out; /* 처음엔 빠르고 끝엔 부드럽게 */
+  animation-fill-mode: forwards;
 }
 .card_info_box figure img  {
   /* layout */
