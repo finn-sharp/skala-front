@@ -3,6 +3,20 @@
    ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 
+:root {
+  --container-max-width: 1024px;
+  --layout-gap-xs: 0.5rem;
+  --layout-gap-sm: 1rem;
+  --layout-gap-md: 1.5rem;
+  --layout-gap-lg: 2rem;
+  --layout-gap-xl: 2.5rem;
+  --layout-gap-2xl: 3rem;
+  --layout-gap-4xl: 4rem;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
 /* ==========================================================================
    2. GLOBAL & HEADER STYLE (기본 공통 및 상단 바)
    ========================================================================== */
@@ -20,16 +34,17 @@ body {
   display:flex;
   flex-direction: column;
   width: 100%;
-  height: 100%;
   min-width: 300px;
   min-height: 100vh;
+  margin: 0;
   
   /* skin */
   background-color: #ffffff;
   color: #212529;
 }
 main {
-  flex:1;
+  /* layout */
+  flex: 1;
 }
 
 /* 전체 h1,h2 tag 대상 제목 스타일 변경 */
@@ -144,7 +159,7 @@ header {
   width:100%;
   height: auto;
   margin: 0 auto;
-  padding-inline: max(1rem, calc((100vw - 1024px) / 2));
+  padding-inline: max(var(--layout-gap-sm), calc((100vw - var(--container-max-width)) / 2));
   position: sticky;
   top: 0;
   display: flex;
@@ -272,14 +287,14 @@ hr {
 
 .container {
     /* layout */
-    width: 100%;
+    width: min(100%, var(--container-max-width));
     margin: 0 auto;
-    padding-inline:1rem;
+    padding-inline: var(--layout-gap-sm);
 }
 
 section {
   /* layout */
-  margin-bottom: 4rem;
+  margin-bottom: var(--layout-gap-4xl);
 }
 
 /* Semantic HTML - <footer> */
@@ -289,7 +304,7 @@ footer {
   margin-top: auto;
   width: 100%;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: var(--layout-gap-lg) 0;
 
   /* skin */
   background-color: #f9fafb;
@@ -441,7 +456,7 @@ footer div aside.footer-btn-container {
 /* Main - Title */
 .main_title > h1 {
   /* layout */
-  margin-bottom: 1rem;
+  margin-bottom: var(--layout-gap-sm);
   
   /* skin */
   color: #212529;
@@ -452,7 +467,7 @@ footer div aside.footer-btn-container {
 }
 .main_title > p {
   /* layout */
-  margin-bottom: 2rem;
+  margin-bottom: var(--layout-gap-lg);
   
   /* skin */
   color: #212529;
@@ -479,7 +494,7 @@ footer div aside.footer-btn-container {
   /* layout */
   flex:1;
   margin: 0 auto;
-  gap: 4rem;
+  gap: var(--layout-gap-4xl);
 
   /* animation */
   animation-name: fadeInUp;       /* 정의한 애니메이션 이름 */
@@ -522,12 +537,13 @@ footer div aside.footer-btn-container {
   /* layout */
   display: flex;
   flex-wrap: wrap;
-  column-gap: 2rem;
+  column-gap: var(--layout-gap-lg);
 }
 .card_notice_item {
   /* layout */
   flex: 1 1 300px; 
   max-width: 800px;
+  padding: var(--layout-gap-sm) 0;
 }
 
 /* ==========================================================================
