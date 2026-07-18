@@ -1,11 +1,11 @@
 # Skala Front
 
+> [!NOTE]
+> 본 프로젝트는 퍼블리싱 구조와 CSS 설계 방식을 익히고 Js를 통해 Data를 관리하는데 집중했습니다
+
 이 저장소는 HTML, CSS, Vanilla JavaScript만으로 프론트엔드 화면을 구현하면서 UI 구조와 스타일링을 공부한 프로젝트입니다. 배포는 main branch에 변경사항이 생기면 github actions를 통해 release되도록 설정해두었습니다.
 
 접속은 다음 링크를 통해 가능합니다 - [바로가기](https://finn-sharp.github.io/skala-front/html/index.html)
-
-> [!NOTE]
-> 본 프로젝트는 퍼블리싱 구조와 CSS 설계 방식을 익히고 Js를 통해 Data를 관리하는데 집중했습니다
 
 ## 프로젝트 소개
 
